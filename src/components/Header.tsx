@@ -1,18 +1,37 @@
 'use client';
 
-import Image from 'next/image';
 import { useState } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
+import { 
+  AppBar, 
+  Toolbar, 
+  Button, 
+  Box, 
+  Menu, 
+  MenuItem, 
+  Avatar, 
+  IconButton,
+  Tooltip
+} from '@mui/material';
+import EventIcon from '@mui/icons-material/Event';
 
 export default function Header() {
   const { setCurrentLanguage } = useLanguage();
   const [currentFlag, setCurrentFlag] = useState('/assets/usa.png');
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   const setLanguage = (lang: string, flagSrc: string) => {
     setCurrentLanguage(lang);
     setCurrentFlag(flagSrc);
-    setShowDropdown(false);
+    handleClose();
   };
 
   const addToGoogleCalendar = () => {
@@ -21,66 +40,66 @@ export default function Header() {
   };
 
   return (
-    <header className="flex justify-between items-center bg-gray-800 p-4">
-      <Image 
-        src="/assets/gta6.png" 
-        alt="GTA 6 Logo" 
-        width={120}
-        height={40}
-        className="h-10 w-auto"
-      />
-      
-      <div className="flex gap-3">
-        <div className="relative">
-          <button 
-            onClick={() => setShowDropdown(!showDropdown)}
-            className="p-2 rounded-md hover:bg-gray-700"
-          >
-            <Image 
-              src={currentFlag} 
-              alt="Current Language" 
-              width={24} 
-              height={24}
-            />
-          </button>
-          
-          {showDropdown && (
-            <div className="absolute right-0 mt-2 w-16 bg-gray-800 rounded-md shadow-lg z-10">
-              <Image 
-                src="/assets/usa.png" 
-                onClick={() => setLanguage('en', '/assets/usa.png')} 
-                width={24} 
-                height={24}
-                alt="English"
-                className="m-2 cursor-pointer"
-              />
-              <Image 
-                src="/assets/spain.png" 
-                onClick={() => setLanguage('es', '/assets/spain.png')} 
-                width={24} 
-                height={24}
-                alt="Spanish"
-                className="m-2 cursor-pointer"
-              />
-              <Image 
-                src="/assets/brazil.png" 
-                onClick={() => setLanguage('pt', '/assets/brazil.png')} 
-                width={24} 
-                height={24}
-                alt="Portuguese"
-                className="m-2 cursor-pointer"
-              />
-            </div>
-          )}
-        </div>
+    <AppBar position="static" color="transparent" sx={{ bgcolor: 'black' }}>
+      <Toolbar sx={{ justifyContent: 'space-between', padding: { xs: 1.5, sm: 2 } }}>
+        <Box component="img" src="/assets/gta6.png" alt="GTA 6 Logo" sx={{ height: { xs: 32, sm: 40 } }} />
         
-        <button 
-          onClick={addToGoogleCalendar}
-          className="bg-gradient-to-b from-gta-pink to-gta-purple text-white px-4 py-2 rounded-lg font-bold hover:opacity-80 transition-opacity"
-        >
-          Add to Calendar
-        </button>
-      </div>
-    </header>
+        <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
+          <Tooltip title="Change language">
+            <IconButton 
+              onClick={handleClick}
+              sx={{ padding: { xs: 0.5, sm: 1 } }}
+            >
+              <Avatar 
+                src={currentFlag} 
+                alt="Current Language" 
+                sx={{ width: { xs: 24, sm: 28 }, height: { xs: 24, sm: 28 } }} 
+              />
+            </IconButton>
+          </Tooltip>
+          
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            PaperProps={{
+              sx: {
+                bgcolor: 'grey.800',
+                border: '1px solid',
+                borderColor: 'grey.700',
+              }
+            }}
+          >
+            <MenuItem onClick={() => setLanguage('en', '/assets/usa.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/assets/usa.png" alt="English" sx={{ width: 24, height: 24 }} />
+            </MenuItem>
+            <MenuItem onClick={() => setLanguage('es', '/assets/spain.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/assets/spain.png" alt="Spanish" sx={{ width: 24, height: 24 }} />
+            </MenuItem>
+            <MenuItem onClick={() => setLanguage('pt', '/assets/brazil.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/assets/brazil.png" alt="Portuguese" sx={{ width: 24, height: 24 }} />
+            </MenuItem>
+          </Menu>
+          
+          <Button 
+            variant="contained"
+            size="small"
+            startIcon={<EventIcon />}
+            onClick={addToGoogleCalendar}
+            sx={{
+              background: 'linear-gradient(to bottom, #ff0066, #990066)',
+              color: 'white',
+              fontWeight: 'bold',
+              '&:hover': {
+                opacity: 0.9,
+                background: 'linear-gradient(to bottom, #ff0066, #990066)',
+              }
+            }}
+          >
+            Add to Calendar
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }

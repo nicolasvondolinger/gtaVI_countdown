@@ -1,50 +1,64 @@
-import Image from 'next/image';
-import Link from 'next/link';
+// Footer.tsx
+import { Box, Typography, IconButton } from '@mui/material';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 
 export default function Footer() {
   return (
-    <footer className="mt-auto py-6 bg-gray-900 text-center">
-      <div className="flex justify-center gap-6">
-        <Link 
-          href="https://www.linkedin.com/in/nicolas-von-dolinger-5a7036207" 
+    <Box
+      component="footer"
+      sx={{
+        mt: 'auto',
+        py: { xs: 2, sm: 3 },
+        backgroundColor: 'grey.900',
+        textAlign: 'center'
+      }}
+    >
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: { xs: 2, sm: 3 } }}>
+        <IconButton
+          href="https://www.linkedin.com/in/nicolas-von-dolinger-5a7036207"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ 
+            transition: 'transform 0.2s',
+            '&:hover': { transform: 'scale(1.1)' }
+          }}
+          color="primary"
         >
-          <Image 
-            src="/assets/linkedin.png" 
-            alt="LinkedIn" 
-            width={40} 
-            height={40}
-            className="hover:opacity-80 transition-opacity"
-          />
-        </Link>
-        <Link 
-          href="https://github.com/nicolasvondolinger" 
+          <LinkedInIcon />
+        </IconButton>
+        
+        <IconButton
+          href="https://github.com/nicolasvondolinger"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ 
+            transition: 'transform 0.2s',
+            '&:hover': { transform: 'scale(1.1)' }
+          }}
+          color="primary"
         >
-          <Image 
-            src="/assets/github.png" 
-            alt="GitHub" 
-            width={40} 
-            height={40}
-            className="hover:opacity-80 transition-opacity"
-          />
-        </Link>
-        <Link 
-          href="https://www.rockstargames.com/VI" 
+          <GitHubIcon />
+        </IconButton>
+        
+        <IconButton
+          href="https://www.rockstargames.com/VI"
           target="_blank"
           rel="noopener noreferrer"
+          sx={{ 
+            transition: 'transform 0.2s',
+            '&:hover': { transform: 'scale(1.1)' }
+          }}
+          color="primary"
         >
-          <Image 
-            src="/assets/rockstar.png" 
-            alt="Rockstar" 
-            width={40} 
-            height={40}
-            className="hover:opacity-80 transition-opacity"
-          />
-        </Link>
-      </div>
-    </footer>
+          <SportsEsportsIcon />
+        </IconButton>
+      </Box>
+      
+      <Typography variant="caption" color="text.secondary" sx={{ mt: 1.5, px: 2 }}>
+        © {new Date().getFullYear()} GTA VI Countdown • Fan-made project
+      </Typography>
+    </Box>
   );
 }
