@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GTA 6 Countdown</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="./assets/gta6.png">
+</head>
+<body>
+  <header>
+    <img src="./assets/gta6.png" alt="GTA 6 Logo" class="logo"/>
+    <div class="header-buttons">
+        <div class="dropdown">
+            <button class="dropbtn">
+              <img src="./assets/usa.png" id="current-flag" width="24" />
+            </button>
+            <div class="dropdown-content">
+              <img src="./assets/usa.png" onclick="setLanguage('en', this)" width="24" />
+              <img src="./assets/spain.png" onclick="setLanguage('es', this)" width="24" />
+              <img src="./assets/brazil.png" onclick="setLanguage('pt', this)" width="24" />
+            </div>
+          </div>
+      <button id="google-calendar-button" onclick="addToGoogleCalendar()">Add to Calendar</button>
+    </div>
+  </header>
+
+  <main>
+    <h1>GRAND THEFT AUTO VI</h1>
+    <h2 id="release-label">Release Date</h2>
+    <p id="countdown-label">Countdown to May 26th, 2026 - 00:00 (<span id="timezone-label">Europe/London</span>)</p>
+
+    <div class="countdown">
+        <div><span id="days">0</span> <span class="days-label">Days</span></div>
+        <div><span id="hours">0</span> <span class="hours-label">Hours</span></div>
+        <div><span id="minutes">0</span> <span class="minutes-label">Minutes</span></div>
+        <div><span id="seconds">0</span> <span class="seconds-label">Seconds</span></div>
+      </div>
+
+    <div class="timezone-selector">
+      <label for="timezone">Select Timezone:</label>
+      <select id="timezone"></select>
+    </div>
+
+    <h3>Watch the Official Trailers</h3>
+    <div class="trailers">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/QdBZY2fkU-0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VQRLujxTm3c" 
+title="GTA VI Trailer 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+allowfullscreen></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <a href="https://www.linkedin.com/in/nicolas-von-dolinger-5a7036207" target="_blank"><img src="./assets/linkedin.png" alt="LinkedIn"/></a>
+    <a href="https://github.com/nicolasvondolinger" target="_blank"><img src="./assets/github.png" alt="GitHub"/></a>
+    <a href="https://www.rockstargames.com/VI" target="_blank"><img src="./assets/rockstar.png" alt="Rockstar"/></a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
