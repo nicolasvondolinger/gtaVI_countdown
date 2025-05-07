@@ -17,7 +17,7 @@ import EventIcon from '@mui/icons-material/Event';
 
 export default function Header() {
   const { setCurrentLanguage } = useLanguage();
-  const [currentFlag, setCurrentFlag] = useState('/assets/usa.png');
+  const [currentFlag, setCurrentFlag] = useState('/gtavi_countdown/assets/usa.png');
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <AppBar position="static" color="transparent" sx={{ bgcolor: 'black' }}>
       <Toolbar sx={{ justifyContent: 'space-between', padding: { xs: 1.5, sm: 2 } }}>
-        <Box component="img" src="/assets/gta6.png" alt="GTA 6 Logo" sx={{ height: { xs: 32, sm: 40 } }} />
+        <Box component="img" src="/gtavi_countdown/assets/gta6.png" alt="GTA 6 Logo" sx={{ height: { xs: 32, sm: 40 } }} />
         
         <Box sx={{ display: 'flex', gap: 1, alignItems: 'center' }}>
           <Tooltip title="Change language">
@@ -70,14 +70,14 @@ export default function Header() {
               }
             }}
           >
-            <MenuItem onClick={() => setLanguage('en', '/assets/usa.png')} sx={{ justifyContent: 'center' }}>
-              <Avatar src="/assets/usa.png" alt="English" sx={{ width: 24, height: 24 }} />
+            <MenuItem onClick={() => setLanguage('en', '/gtavi_countdown/assets/usa.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/gtavi_countdown/assets/usa.png" alt="English" sx={{ width: 24, height: 24 }} />
             </MenuItem>
-            <MenuItem onClick={() => setLanguage('es', '/assets/spain.png')} sx={{ justifyContent: 'center' }}>
-              <Avatar src="/assets/spain.png" alt="Spanish" sx={{ width: 24, height: 24 }} />
+            <MenuItem onClick={() => setLanguage('es', '/gtavi_countdown/assets/spain.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/gtavi_countdown/assets/spain.png" alt="Spanish" sx={{ width: 24, height: 24 }} />
             </MenuItem>
-            <MenuItem onClick={() => setLanguage('pt', '/assets/brazil.png')} sx={{ justifyContent: 'center' }}>
-              <Avatar src="/assets/brazil.png" alt="Portuguese" sx={{ width: 24, height: 24 }} />
+            <MenuItem onClick={() => setLanguage('pt', '/gtavi_countdown/assets/brazil.png')} sx={{ justifyContent: 'center' }}>
+              <Avatar src="/gtavi_countdown/assets/brazil.png" alt="Portuguese" sx={{ width: 24, height: 24 }} />
             </MenuItem>
           </Menu>
           
