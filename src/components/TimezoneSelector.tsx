@@ -52,30 +52,6 @@ export default function TimezoneSelector({
           {translations.selectTz}
         </Typography>
         
-        <TextField
-          id="timezone-search"
-          fullWidth
-          placeholder="Search timezone..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          variant="outlined"
-          size="small"
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              backgroundColor: 'grey.700',
-              '&:hover .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'grey.500',
-              },
-              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#ff0066',
-              },
-            },
-            '& .MuiOutlinedInput-input': {
-              color: 'white',
-            }
-          }}
-        />
-        
         <FormControl fullWidth size="small">
           <Select
             id="timezone"
