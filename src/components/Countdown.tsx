@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/hooks/useLanguage';
-import { Box, Typography, Grid, Paper } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 
 const releaseDateUTC = new Date("2026-05-26T00:00:00Z");
 
@@ -50,7 +50,7 @@ export default function Countdown({ timezone }: CountdownProps) {
         {translations.countdown} ({timezone})
       </Typography>
 
-      <Paper 
+      <Paper
         elevation={3}
         sx={{
           backgroundColor: 'grey.800',
@@ -60,20 +60,31 @@ export default function Countdown({ timezone }: CountdownProps) {
           margin: '0 auto'
         }}
       >
-        <Grid container spacing={2} justifyContent="center">
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 2, // espaço entre os itens
+          }}
+        >
           {Object.entries(timeLeft).map(([unit, value]) => (
-            <Grid item key={unit} sx={{ textAlign: 'center', flex: 1 }}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Typography variant="h5" component="span" sx={{ fontWeight: 'bold' }}>
-                  {value}
-                </Typography>
-                <Typography variant="caption" sx={{ opacity: 0.8 }}>
-                  {translations[unit as keyof typeof translations]}
-                </Typography>
-              </Box>
-            </Grid>
+            <Box
+              key={unit}
+              sx={{
+                flex: '1 1 100px', // base flex size para responsividade
+                textAlign: 'center',
+              }}
+            >
+              <Typography variant="h5" component="span" sx={{ fontWeight: 'bold' }}>
+                {value}
+              </Typography>
+              <Typography variant="caption" sx={{ opacity: 0.8, display: 'block' }}>
+                {translations[unit as keyof typeof translations]}
+              </Typography>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Paper>
     </Box>
   );
