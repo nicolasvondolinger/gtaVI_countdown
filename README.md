@@ -26,43 +26,43 @@ Projeto web com contagem regressiva em tempo real para o lançamento oficial de 
 
 ## 📦 Estrutura do Projeto
 
-gtaVI_countdown/
-│
-├── index.html # Página principal
-├── style.css # Estilos globais
-├── script.js # Lógica da contagem e idioma
-│
-├── assets/ # Imagens utilizadas
-│ ├── gta6.png
-│ ├── usa.png
-│ ├── brazil.png
-│ ├── spain.png
-│ ├── github.png
-│ ├── linkedin.png
-│ └── rockstar.png
-│
-└── README.md # Este arquivo
+    gtaVI_countdown/
+    │
+    ├── index.html # Página principal
+    ├── style.css # Estilos globais
+    ├── script.js # Lógica da contagem e idioma
+    │
+    ├── assets/ # Imagens utilizadas
+    │ ├── gta6.png
+    │ ├── usa.png
+    │ ├── brazil.png
+    │ ├── spain.png
+    │ ├── github.png
+    │ ├── linkedin.png
+    │ └── rockstar.png
+    │
+    └── README.md # Este arquivo
 
 ## 📌 Como Usar
 
 ### 1. Clonando o Repositório
 
-git clone https://github.com/seu-usuario/GTA6-Countdown.git
-cd GTA6-Countdown
+    git clone https://github.com/nicolasvondolinger/gtavI_countdown.git
+    cd GTA6-Countdown
 
 2. Abrindo Localmente
 
 Abra o arquivo index.html em seu navegador:
 
-open index.html # macOS
-start index.html # Windows
-xdg-open index.html # Linux
+    open index.html # macOS
+    start index.html # Windows
+    xdg-open index.html # Linux
 
 3. Personalização (Opcional)
 
     Data de lançamento: Altere a linha abaixo em script.js se a data mudar:
 
-    const releaseDateUTC = new Date("2026-05-26T00:00:00Z");
+        const releaseDateUTC = new Date("2026-05-26T00:00:00Z");
 
     Idiomas: Adicione novos idiomas no objeto translations no script.js.
 
@@ -88,22 +88,23 @@ O usuário pode selecionar qualquer fuso horário suportado pelo navegador. A co
 
 Clique no botão "Add to Calendar" para criar um evento no seu Google Calendar para o dia do lançamento de GTA VI.
 
-    ⚠️ O link ainda precisa ser completado com os parâmetros corretos (isso pode ser feito usando encodeURIComponent no script.js com os dados do evento).
+⚠️ O link ainda precisa ser completado com os parâmetros corretos (isso pode ser feito usando encodeURIComponent no script.js com os dados do evento).
 
 ## 🔗 Links
 
-    Site oficial do GTA VI
+Site oficial do GTA VI:
 
-    Canal da Rockstar no YouTube
+Canal da Rockstar no YouTube:
 
-    Perfil do desenvolvedor no GitHub
+Meu perfil no GitHub:
 
-    Perfil do desenvolvedor no LinkedIn
+Meu perfil no LinkedIn:
 
 ## 🤝 Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
-🧑‍💻 Autor
+
+## 🧑‍💻 Autor
 
 Desenvolvido por Nicolas von Dolinger para os fãs da Rockstar Games e da franquia GTA.
 
