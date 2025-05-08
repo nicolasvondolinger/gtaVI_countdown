@@ -40,14 +40,14 @@ export default function Home() {
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
           border: '1px solid rgba(255, 255, 255, 0.1)'
         }}>
-          {/* Substituição do texto pela logo */}
+          {/* Logo com tamanho ajustado */}
           <Box
             component="img"
             src="/gtavi_countdown/assets/gta-logo.png"
             alt="GTA VI Logo"
             sx={{
-              width: '100%',
-              maxWidth: '600px',
+              width: '80%',  // Reduzido de '100%'
+              maxWidth: '400px',  // Reduzido de '600px'
               mb: { xs: 4, sm: 6 },
               filter: 'drop-shadow(0 0 10px rgba(255, 0, 102, 0.5))'
             }}
