@@ -1,6 +1,7 @@
-import { Box, Typography, IconButton, Stack } from '@mui/material';
+import { Box, Typography, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Image from 'next/image';
 import Rockstar from '../../public/assets/rockstar.png';
 
 export default function Footer() {
@@ -26,7 +27,7 @@ export default function Footer() {
         <Box sx={{ textAlign: 'center' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
             <IconButton
-              href="https://www.linkedin.com/in/lucas-cassio-costa"  // Atualizar com o LinkedIn real do Lucas
+              href="https://www.linkedin.com/in/lucas-cassio-costa"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ 
@@ -39,7 +40,7 @@ export default function Footer() {
             </IconButton>
             
             <IconButton
-              href="https://github.com/lucascassiocosta"  // Atualizar com o GitHub real do Lucas
+              href="https://github.com/lucascassiocosta"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ 
@@ -68,12 +69,12 @@ export default function Footer() {
             }}
             color="primary"
           >
-            <img 
-              src={Rockstar.src} 
+            <Image 
+              src={Rockstar} 
               alt="Rockstar Logo" 
+              width={24}
+              height={24}
               style={{ 
-                width: 24, 
-                height: 24,
                 filter: 'brightness(0) invert(0.8)',
                 transition: 'filter 0.2s'
               }} 
