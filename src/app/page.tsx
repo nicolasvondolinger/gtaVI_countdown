@@ -40,19 +40,19 @@ export default function Home() {
           boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
           border: '1px solid rgba(255, 255, 255, 0.1)'
         }}>
-          <Typography 
-            variant="h2" 
-            component="h1" 
+          {/* Substituição do texto pela logo */}
+          <Box
+            component="img"
+            src="/gtavi_countdown/assets/gta-logo.png"
+            alt="GTA VI Logo"
             sx={{
-              fontWeight: 'bold',
+              width: '100%',
+              maxWidth: '600px',
               mb: { xs: 4, sm: 6 },
-              color: '#ff0066',
-              fontSize: { xs: '2.5rem', sm: '3.5rem' },
-              textShadow: '0 0 10px rgba(255, 0, 102, 0.5)'
+              filter: 'drop-shadow(0 0 10px rgba(255, 0, 102, 0.5))'
             }}
-          >
-            GRAND THEFT AUTO VI
-          </Typography>
+          />
+          
           <Countdown timezone={timezone} />
           <TimezoneSelector 
             selectedTimezone={timezone}
