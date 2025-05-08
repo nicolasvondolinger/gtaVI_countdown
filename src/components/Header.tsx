@@ -80,7 +80,7 @@ END:VCALENDAR`;
   };
 
   return (
-    <AppBar position="static" color="transparent" sx={{ bgcolor: 'black' }}>
+    <AppBar position="static" color="transparent" sx={{ bgcolor: 'grey.900' }}>
       <Toolbar sx={{ justifyContent: 'space-between', padding: { xs: 1.5, sm: 2 } }}>
         <Box component="img" src="/gtavi_countdown/assets/gta6.png" alt="GTA 6 Logo" sx={{ height: { xs: 32, sm: 40 } }} />
         
