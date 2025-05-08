@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Box } from '@mui/material';
 import Header from '@/components/Header';
 import Countdown from '@/components/Countdown';
 import TimezoneSelector from '@/components/TimezoneSelector';
