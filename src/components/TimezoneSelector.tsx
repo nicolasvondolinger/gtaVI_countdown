@@ -22,16 +22,11 @@ export default function TimezoneSelector({
 }: TimezoneSelectorProps) {
   const { translations } = useLanguage();
   const [timezones, setTimezones] = useState<string[]>([]);
-  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const zones = Intl.supportedValuesOf("timeZone");
     setTimezones(zones);
   }, []);
-
-  const filteredTimezones = timezones.filter(tz => 
-    tz.toLowerCase().includes(searchTerm.toLowerCase())
-  );
 
   return (
     <Box sx={{ 
@@ -46,7 +41,7 @@ export default function TimezoneSelector({
         alignItems="center" 
         sx={{ maxWidth: 400, width: '100%' }}
       >
-        <Typography component="label" htmlFor="timezone-search" variant="subtitle1">
+        <Typography component="label" htmlFor="timezone" variant="subtitle1">
           {translations.selectTz}
         </Typography>
         
@@ -69,7 +64,7 @@ export default function TimezoneSelector({
               },
             }}
           >
-            {filteredTimezones.map((tz) => (
+            {timezones.map((tz) => (
               <MenuItem key={tz} value={tz}>
                 {tz}
               </MenuItem>
