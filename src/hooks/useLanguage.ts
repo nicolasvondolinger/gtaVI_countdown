@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type Translations = {
   [key: string]: {
@@ -47,11 +47,32 @@ const translations: Translations = {
 };
 
 export const useLanguage = () => {
-  const [currentLanguage, setCurrentLanguage] = useState('en');
+  const [currentLanguage, setCurrentLanguage] = useState<string>('en');
+
+  // Salvar no localStorage e carregar o idioma preferido
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage && translations[savedLanguage]) {
+      setCurrentLanguage(savedLanguage);
+    } else {
+      // Detectar idioma do navegador
+      const browserLanguage = navigator.language.split('-')[0];
+      if (translations[browserLanguage]) {
+        setCurrentLanguage(browserLanguage);
+      }
+    }
+  }, []);
+
+  const changeLanguage = (lang: string) => {
+    if (translations[lang]) {
+      setCurrentLanguage(lang);
+      localStorage.setItem('language', lang);
+    }
+  };
 
   return {
     currentLanguage,
-    translations: translations[currentLanguage],
-    setCurrentLanguage
+    translations: translations[currentLanguage] || translations.en,
+    setCurrentLanguage: changeLanguage
   };
 };

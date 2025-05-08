@@ -44,7 +44,7 @@ export default function Countdown({ timezone }: CountdownProps) {
 
   return (
     <Box sx={{ padding: { xs: 2, sm: 0 } }}>
-      <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold', mb: 1 }}>
+      <Typography variant="h2" component="h2" sx={{ fontWeight: 'bold', mb: 1 }}>
         {translations.release}
       </Typography>
       <Typography variant="body1" sx={{ mb: { xs: 2, sm: 3 } }}>
@@ -77,10 +77,10 @@ export default function Countdown({ timezone }: CountdownProps) {
                 textAlign: 'center',
               }}
             >
-              <Typography variant="h5" component="span" sx={{ fontWeight: 'bold' }}>
+              <Typography variant="h3" component="span" sx={{ fontWeight: 'bold' }}>
                 {value}
               </Typography>
-              <Typography variant="caption" sx={{ opacity: 0.8, display: 'block' }}>
+              <Typography variant="h6" sx={{ opacity: 0.8, display: 'block' }}>
                 {translations[unit as keyof typeof translations]}
               </Typography>
             </Box>

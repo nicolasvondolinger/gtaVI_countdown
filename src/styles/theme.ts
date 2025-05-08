@@ -51,7 +51,7 @@ const theme = createTheme({
     // Title font using Pricedown (GTA style)
     h1: {
       fontFamily: 'var(--font-pricedown), sans-serif',
-      background: `-webkit-linear-gradient(${gtaColors.purple}, ${gtaColors.pink}, ${gtaColors.orange})`,
+      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       fontWeight: 400, // Pricedown geralmente funciona melhor com peso normal
@@ -60,7 +60,7 @@ const theme = createTheme({
     },
     h2: {
       fontFamily: 'var(--font-pricedown), sans-serif',
-      background: `-webkit-linear-gradient(${gtaColors.purple}, ${gtaColors.pink}, ${gtaColors.orange})`,
+      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       fontWeight: 400,
@@ -69,13 +69,23 @@ const theme = createTheme({
     },
     h3: {
       fontFamily: 'var(--font-pricedown), sans-serif',
-      color: gtaColors.pink,
       fontWeight: 400,
-      letterSpacing: '1px'
+      letterSpacing: '1px',
+      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      display: 'inline-block'
     },
     h4: {
-      fontFamily: 'var(--font-outfit), sans-serif',
-      fontWeight: 600
+      fontFamily: 'var(--font-pricedown), sans-serif',
+      fontWeight: 600,
+      letterSpacing: '1px',
+      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
+      WebkitBackgroundClip: 'text',
+      backgroundClip: 'text',
+      color: 'transparent',
+      display: 'inline-block'
     },
     h5: {
       fontFamily: 'var(--font-outfit), sans-serif',

@@ -51,22 +51,27 @@ export default function Header() {
   };
 
   const addToAppleCalendar = () => {
-    const startDate = '20260526T000000Z';
-    const endDate = '20260526T010000Z';
+    const startDate = '20260526T000000';
+    const endDate = '20260526T010000';
     const title = 'GTA VI Release';
     const details = 'GTA 6 is releasing!';
     
-    const calendarUrl = `data:text/calendar;charset=utf8,BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-DTSTART:${startDate}
-DTEND:${endDate}
-SUMMARY:${title}
-DESCRIPTION:${details}
-END:VEVENT
-END:VCALENDAR`;
+    const calendarContent = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//GTA VI Countdown//EN',
+      'BEGIN:VEVENT',
+      `UID:${Date.now()}@gtavi.com`,
+      `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').split('.')[0]}Z`,
+      `DTSTART:${startDate}`,
+      `DTEND:${endDate}`,
+      `SUMMARY:${title}`,
+      `DESCRIPTION:${details}`,
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ].join('\r\n');
     
-    const blob = new Blob([calendarUrl], { type: 'text/calendar' });
+    const blob = new Blob([calendarContent], { type: 'text/calendar;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     
     const link = document.createElement('a');

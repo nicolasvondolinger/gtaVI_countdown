@@ -22,11 +22,33 @@ export default function TimezoneSelector({
 }: TimezoneSelectorProps) {
   const { translations } = useLanguage();
   const [timezones, setTimezones] = useState<string[]>([]);
+  const [isDetecting, setIsDetecting] = useState(true);
 
   useEffect(() => {
+    // Obter todos os fusos horários disponíveis
     const zones = Intl.supportedValuesOf("timeZone");
     setTimezones(zones);
-  }, []);
+    
+    // Tentar detectar o fuso horário do usuário
+    try {
+      const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (zones.includes(userTimezone)) {
+        onTimezoneChange(userTimezone);
+      }
+    } catch (e) {
+      console.error("Não foi possível detectar o fuso horário:", e);
+    } finally {
+      setIsDetecting(false);
+    }
+  }, [onTimezoneChange]);
+
+  if (isDetecting) {
+    return (
+      <Box sx={{ textAlign: 'center', py: 2 }}>
+        <Typography>Detectando seu fuso horário...</Typography>
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ 
