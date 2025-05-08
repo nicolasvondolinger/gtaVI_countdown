@@ -27,7 +27,7 @@ export default function Footer() {
         <Box sx={{ textAlign: 'center' }}>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
             <IconButton
-              href="https://www.linkedin.com/in/lucas-cassio-costa"
+              href="https://www.linkedin.com/in/lucas-c-392792251/"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ 
@@ -40,7 +40,7 @@ export default function Footer() {
             </IconButton>
             
             <IconButton
-              href="https://github.com/lucascassiocosta"
+              href="https://github.com/lucascassio"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ 
