@@ -7,12 +7,12 @@ import {
   Typography, 
   Paper, 
   IconButton, 
-  MobileStepper 
+  MobileStepper,
+  useMediaQuery,
+  useTheme
 } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
 
 export default function Trailers() {
   const { translations } = useLanguage();
@@ -47,17 +47,40 @@ export default function Trailers() {
 
   return (
     <Box sx={{ 
-      mt: { xs: 3, sm: 5 }, 
-      px: { xs: 2, sm: 3, md: 0 } 
+      mt: 4,
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
     }}>
-      <Typography variant="h5" component="h3" sx={{ mb: { xs: 2, sm: 3 }, fontWeight: 'bold' }}>
+      <Typography 
+        variant="h5" 
+        component="h3" 
+        sx={{ 
+          mb: 3, 
+          fontWeight: 'bold',
+          color: 'white',
+          textShadow: '0 0 8px rgba(255, 0, 102, 0.5)'
+        }}
+      >
         {translations.trailers}
       </Typography>
       
       {/* Mobile Carousel */}
       {isMobile ? (
-        <Box sx={{ position: 'relative' }}>
-          <Paper elevation={3} sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2 }}>
+        <Box sx={{ 
+          position: 'relative',
+          width: '90%',
+          maxWidth: '600px'
+        }}>
+          <Paper elevation={3} sx={{ 
+            position: 'relative', 
+            overflow: 'hidden', 
+            borderRadius: 2,
+            backgroundColor: 'rgba(30, 30, 30, 0.8)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
+          }}>
             <Box 
               component="iframe"
               src={trailers[activeTrailer].url}
@@ -86,9 +109,13 @@ export default function Trailers() {
               <IconButton 
                 onClick={handleBack}
                 sx={{ 
-                  bgcolor: 'rgba(0, 0, 0, 0.5)', 
+                  bgcolor: 'rgba(0, 0, 0, 0.7)', 
                   color: 'white',
-                  '&:hover': { bgcolor: 'rgba(0, 0, 0, 0.7)' } 
+                  '&:hover': { 
+                    bgcolor: '#ff0066',
+                    transform: 'scale(1.1)'
+                  },
+                  transition: 'all 0.3s ease'
                 }}
                 size="small"
               >
@@ -97,9 +124,13 @@ export default function Trailers() {
               <IconButton 
                 onClick={handleNext}
                 sx={{ 
-                  bgcolor: 'rgba(0, 0, 0, 0.5)', 
+                  bgcolor: 'rgba(0, 0, 0, 0.7)', 
                   color: 'white',
-                  '&:hover': { bgcolor: 'rgba(0, 0, 0, 0.7)' } 
+                  '&:hover': { 
+                    bgcolor: '#ff0066',
+                    transform: 'scale(1.1)'
+                  },
+                  transition: 'all 0.3s ease'
                 }}
                 size="small"
               >
@@ -108,7 +139,15 @@ export default function Trailers() {
             </Box>
           </Paper>
           
-          <Typography variant="subtitle2" align="center" sx={{ mt: 1 }}>
+          <Typography 
+            variant="subtitle1" 
+            align="center" 
+            sx={{ 
+              mt: 2,
+              color: 'white',
+              fontWeight: '500'
+            }}
+          >
             {trailers[activeTrailer].title}
           </Typography>
           
@@ -119,8 +158,16 @@ export default function Trailers() {
             sx={{ 
               bgcolor: 'transparent', 
               justifyContent: 'center',
-              '& .MuiMobileStepper-dot': { bgcolor: 'grey.500' },
-              '& .MuiMobileStepper-dotActive': { bgcolor: '#ff0066' } 
+              '& .MuiMobileStepper-dot': { 
+                bgcolor: 'grey.500',
+                width: 10,
+                height: 10
+              },
+              '& .MuiMobileStepper-dotActive': { 
+                bgcolor: '#ff0066',
+                width: 12,
+                height: 12
+              } 
             }}
             nextButton={null}
             backButton={null}
@@ -131,18 +178,34 @@ export default function Trailers() {
         <Box sx={{ 
           display: 'flex', 
           flexWrap: 'wrap', 
-          gap: 3, 
-          justifyContent: 'center' 
+          gap: 4, 
+          justifyContent: 'center',
+          width: '100%',
+          maxWidth: '1200px'
         }}>
           {trailers.map((trailer) => (
             <Box 
               key={trailer.id}
               sx={{ 
-                width: { xs: '100%', md: 'calc(50% - 12px)' }, 
-                maxWidth: '600px',
+                width: { xs: '100%', md: 'calc(50% - 16px)' }, 
+                maxWidth: '560px',
               }}
             >
-              <Paper elevation={3} sx={{ borderRadius: 2, overflow: 'hidden' }}>
+              <Paper 
+                elevation={3} 
+                sx={{ 
+                  borderRadius: 2, 
+                  overflow: 'hidden',
+                  backgroundColor: 'rgba(30, 30, 30, 0.8)',
+                  backdropFilter: 'blur(4px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 10px 20px rgba(255, 0, 102, 0.3)'
+                  }
+                }}
+              >
                 <Box 
                   component="iframe"
                   src={trailer.url}
@@ -156,7 +219,15 @@ export default function Trailers() {
                   }}
                 />
               </Paper>
-              <Typography variant="subtitle2" align="center" sx={{ mt: 1 }}>
+              <Typography 
+                variant="subtitle1" 
+                align="center" 
+                sx={{ 
+                  mt: 2,
+                  color: 'white',
+                  fontWeight: '500'
+                }}
+              >
                 {trailer.title}
               </Typography>
             </Box>
