@@ -7,6 +7,7 @@ import Countdown from '@/components/Countdown';
 import TimezoneSelector from '@/components/TimezoneSelector';
 import Trailers from '@/components/Trailers';
 import Footer from '@/components/Footer';
+import PurchaseButton from '@/components/PurchaseButton';
 
 export default function Home() {
   const [timezone, setTimezone] = useState('Europe/London');
@@ -32,7 +33,7 @@ export default function Home() {
       }}>
         <Box sx={{
           /* Aumenta opacidade em mobile (xs) para 0.85, mantém 0.7 em telas maiores */
-          backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.7)' },
+          backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
           backdropFilter: 'blur(8px)',
           borderRadius: '16px',
           p: { xs: 3, md: 4 },
@@ -60,6 +61,7 @@ export default function Home() {
             onTimezoneChange={setTimezone}
           />
           <Trailers />
+          <PurchaseButton />
         </Box>
       </Container>
       <Footer />
