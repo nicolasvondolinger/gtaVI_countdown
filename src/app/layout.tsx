@@ -4,9 +4,6 @@ import ThemeRegistry from '@/components/ThemeRegistry';
 
 export const metadata = {
   title: 'GTA VI Countdown', 
-  icons: {
-    icon: '/favicon.ico', 
-  }
 };
 
 export default function RootLayout({

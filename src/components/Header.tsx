@@ -130,11 +130,11 @@ export default function Header() {
             <IconButton
               onClick={handleCalendarClick}
               sx={{
-                background: 'linear-gradient(to bottom, #ff0066, #990066)',
+                background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
                 color: 'white',
                 '&:hover': {
                   opacity: 0.9,
-                  background: 'linear-gradient(to bottom, #ff0066, #990066)',
+                  background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
                 }
               }}
             >
