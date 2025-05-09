@@ -8,6 +8,7 @@ import TimezoneSelector from '@/components/TimezoneSelector';
 import Trailers from '@/components/Trailers';
 import Footer from '@/components/Footer';
 import PurchaseButton from '@/components/PurchaseButton';
+import ImageCarousel from '@/components/ImageCarousel';
 
 export default function Home() {
   const [timezone, setTimezone] = useState('Europe/London');
@@ -63,6 +64,7 @@ export default function Home() {
           <Trailers />
           <PurchaseButton />
         </Box>
+        <ImageCarousel />
       </Container>
       <Footer />
     </Box>
