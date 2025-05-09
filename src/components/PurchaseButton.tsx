@@ -16,10 +16,12 @@ export default function PurchaseButton() {
         mb: 4,
         py: 2,
         px: 4,
-        fontSize: '1.1rem',\
+        fontSize: '1.1rem',
         fontWeight: 'bold',
+        backgroundColor: '#4CAF50',
         color: 'white',
         '&:hover': {
+          backgroundColor: '#388E3C',
           transform: 'scale(1.02)',
         },
         '&:active': {
