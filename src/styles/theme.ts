@@ -59,13 +59,12 @@ const theme = createTheme({
       textTransform: 'uppercase'
     },
     h2: {
-      fontFamily: 'var(--font-pricedown), sans-serif',
-      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
+      fontFamily: 'var(--font-outfit), sans-serif',
+      background: 'white',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       fontWeight: 400,
-      letterSpacing: '1.5px',
-      textTransform: 'uppercase'
+      letterSpacing: '1px'
     },
     h3: {
       fontFamily: 'var(--font-pricedown), sans-serif',
@@ -78,10 +77,10 @@ const theme = createTheme({
       display: 'inline-block'
     },
     h4: {
-      fontFamily: 'var(--font-pricedown), sans-serif',
+      fontFamily: 'var(--font-outfit), sans-serif',
       fontWeight: 600,
       letterSpacing: '1px',
-      background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
+      background: 'white',
       WebkitBackgroundClip: 'text',
       backgroundClip: 'text',
       color: 'transparent',

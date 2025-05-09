@@ -44,17 +44,17 @@ export default function Countdown({ timezone }: CountdownProps) {
 
   return (
     <Box sx={{ padding: { xs: 2, sm: 0 } }}>
-      <Typography variant="h2" component="h2" sx={{ fontWeight: 'bold', mb: 1 }}>
+      <Typography variant="h4" component="h2" sx={{ fontWeight: 'bold', mb: 1 }}>
         {translations.release}
       </Typography>
-      <Typography variant="body1" sx={{ mb: { xs: 2, sm: 3 } }}>
+      <Typography variant="subtitle1" sx={{ mb: { xs: 2, sm: 3 } }}>
         {translations.countdown} ({timezone})
       </Typography>
 
       <Paper
         elevation={3}
         sx={{
-          backgroundColor: 'grey.800',
+          backgroundColor: 'grey.900',
           padding: { xs: 2, sm: 3 },
           borderRadius: 2,
           maxWidth: 'md',
