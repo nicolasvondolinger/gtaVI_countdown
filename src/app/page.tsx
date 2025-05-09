@@ -64,8 +64,9 @@ export default function Home() {
           <Trailers />
           <PurchaseButton />
         </Box>
-        <ImageCarousel />
+        {/*<ImageCarousel />*/}
       </Container>
+      <ImageCarousel />
       <Footer />
     </Box>
   );
