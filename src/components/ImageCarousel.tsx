@@ -43,11 +43,11 @@ export default function ImageCarousel() {
   return (
     <Box sx={{
       width: '100vw',
-      height: { xs: '250px', md: '400px' }, // Altura reduzida
+      height: { xs: '400px', sm: '500px', md: '600px', lg: '700px' }, // Aumentei a altura
       position: 'relative',
       overflow: 'hidden',
       mt: 4, // Mantém o espaçamento superior
-      // Removido mb: 4 para eliminar o gap inferior
+      // Removi o mb: 4 para eliminar o gap com o footer
     }}>
       {/* Imagem atual */}
       <Box
@@ -56,7 +56,7 @@ export default function ImageCarousel() {
         alt={`Carousel image ${currentIndex + 1}`}
         sx={{
           width: '100%',
-          height: '150%',
+          height: '100%',
           objectFit: 'cover',
           transition: 'opacity 0.5s ease',
         }}
