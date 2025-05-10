@@ -14,7 +14,6 @@ const galleryItems = [
     title: 'Lucia\'s father taught her to fight',
     description: 'Life has been coming at her swinging ever since. Fighting for her family landed her in the Leonida Penitentiary. Sheer luck got her out. Lucia\'s learned her lesson – only smart moves from here.'
   },
-  // Adicione mais itens conforme necessário
 ];
 
 export default function CharacterGallery() {
@@ -24,7 +23,7 @@ export default function CharacterGallery() {
     <Box sx={{
       width: '100%',
       py: 8,
-      backgroundColor: "grey.900",
+      backgroundColor: theme.palette.background.paper,
     }}>
       {galleryItems.map((item, index) => (
         <Box 
@@ -77,7 +76,6 @@ export default function CharacterGallery() {
                 fontWeight: 400,
                 letterSpacing: '1px',
                 mb: 3,
-                color: theme.palette.text.primary,
                 background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
