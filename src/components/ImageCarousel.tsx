@@ -20,22 +20,19 @@ export default function ImageCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Função para avançar para a próxima imagem
   const goToNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, []);
 
-  // Função para voltar para a imagem anterior
   const goToPrev = useCallback(() => {
     setCurrentIndex((prevIndex) => 
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   }, []);
 
-  // Auto-rotacionar as imagens (pausa quando hover)
   useEffect(() => {
     let interval: NodeJS.Timeout;
-    
+
     if (!isHovered) {
       interval = setInterval(goToNext, 5000);
     }
@@ -45,10 +42,8 @@ export default function ImageCarousel() {
     };
   }, [goToNext, isHovered]);
 
-  // Resetar o timer quando o usuário interage manualmente
   const handleManualNavigation = (navigationFn: () => void) => {
     navigationFn();
-    // Forçar um reset do timer
     setIsHovered(true);
     setTimeout(() => setIsHovered(false), 5000);
   };
@@ -56,11 +51,19 @@ export default function ImageCarousel() {
   return (
     <Box 
       sx={{
-        width: '100vw',
+        backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
+        backdropFilter: 'blur(8px)',
+        borderRadius: '16px',
+        p: { xs: 3, md: 4 },
+        width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
+        maxWidth: '900px',
         height: { xs: '400px', sm: '500px', md: '600px', lg: '700px' },
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'relative',
         overflow: 'hidden',
         mt: 4,
+        mx: 'auto'
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -86,6 +89,7 @@ export default function ImageCarousel() {
               height: '100%',
               flexShrink: 0,
               objectFit: 'cover',
+              borderRadius: '16px',
             }}
           />
         ))}
