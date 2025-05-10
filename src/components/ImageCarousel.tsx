@@ -169,7 +169,6 @@ export default function ImageCarousel() {
             sx={{
               width: index === currentIndex ? '24px' : '10px',
               height: '10px',
-              borderRadius: index === currentIndex ? '8px' : '50%',
               backgroundColor:
                 index === currentIndex 
                   ? 'linear-gradient(135deg, #9959D9, #FF0066)' 
