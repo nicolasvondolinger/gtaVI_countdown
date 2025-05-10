@@ -52,20 +52,21 @@ export default function ImageCarousel() {
     <Box
       sx={{
         backgroundColor: 'rgba(0, 0, 0, 0.85)',
-        backdropFilter: 'blur(8px)',
-        borderRadius: '16px',
+        backdropFilter: 'blur(12px)',
+        borderRadius: '8px',
         p: { xs: 2, md: 3 },
         width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
         maxWidth: '1800px',
         height: { xs: '400px', sm: '500px', md: '600px', lg: '700px' },
         boxShadow: '0 8px 32px rgba(255, 105, 180, 0.3)',
-        border: '1px solid rgba(255, 255, 255, 0.1)',
+        border: '1px solid rgba(255, 255, 255, 0.15)',
         position: 'relative',
         overflow: 'hidden',
         mb: 4,
         alignSelf: 'center',
         '&:hover': {
           boxShadow: '0 8px 32px rgba(255, 105, 180, 0.5)',
+          borderColor: 'rgba(255, 255, 255, 0.25)',
         },
         transition: 'all 0.3s ease',
       }}
@@ -92,11 +93,11 @@ export default function ImageCarousel() {
               height: '100%',
               flexShrink: 0,
               objectFit: 'cover',
-              borderRadius: '8px',
-              filter: 'brightness(0.95)',
+              borderRadius: '4px',
+              filter: 'brightness(0.95) saturate(1.1)',
               transition: 'filter 0.3s ease',
               '&:hover': {
-                filter: 'brightness(1.05)',
+                filter: 'brightness(1.05) saturate(1.2)',
               },
             }}
           />
@@ -110,12 +111,13 @@ export default function ImageCarousel() {
           left: '16px',
           top: '50%',
           transform: 'translateY(-50%)',
-          background: 'linear-gradient(135deg, rgba(153, 89, 217, 0.8), rgba(255, 0, 102, 0.8))',
+          background: 'linear-gradient(135deg, rgba(153, 89, 217, 0.9), rgba(255, 0, 102, 0.9))',
           color: 'white',
           p: 2,
           '&:hover': {
             background: 'linear-gradient(135deg, rgba(153, 89, 217, 1), rgba(255, 0, 102, 1))',
             transform: 'translateY(-50%) scale(1.1)',
+            boxShadow: '0 0 15px rgba(153, 89, 217, 0.7)',
           },
           opacity: isHovered ? 1 : 0,
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -131,12 +133,13 @@ export default function ImageCarousel() {
           right: '16px',
           top: '50%',
           transform: 'translateY(-50%)',
-          background: 'linear-gradient(135deg, rgba(255, 0, 102, 0.8), rgba(255, 153, 0, 0.8))',
+          background: 'linear-gradient(135deg, rgba(255, 0, 102, 0.9), rgba(255, 153, 0, 0.9))',
           color: 'white',
           p: 2,
           '&:hover': {
             background: 'linear-gradient(135deg, rgba(255, 0, 102, 1), rgba(255, 153, 0, 1))',
             transform: 'translateY(-50%) scale(1.1)',
+            boxShadow: '0 0 15px rgba(255, 0, 102, 0.7)',
           },
           opacity: isHovered ? 1 : 0,
           transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -155,8 +158,9 @@ export default function ImageCarousel() {
           gap: '12px',
           p: 1,
           borderRadius: '24px',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          backdropFilter: 'blur(4px)',
+          backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          backdropFilter: 'blur(8px)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
         }}
       >
         {images.map((_, index) => (
@@ -169,10 +173,8 @@ export default function ImageCarousel() {
             sx={{
               width: index === currentIndex ? '24px' : '10px',
               height: '10px',
-              backgroundColor:
-                index === currentIndex 
-                  ? 'linear-gradient(135deg, #9959D9, #FF0066)' 
-                  : 'rgba(255,255,255,0.5)',
+              borderRadius: index === currentIndex ? '8px' : '50%',
+              backgroundColor: index === currentIndex ? 'transparent' : 'rgba(255,255,255,0.5)',
               cursor: 'pointer',
               transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               '&:hover': {
@@ -181,6 +183,7 @@ export default function ImageCarousel() {
               },
               ...(index === currentIndex && {
                 background: 'linear-gradient(135deg, #9959D9, #FF0066)',
+                boxShadow: '0 0 8px rgba(255, 0, 102, 0.7)',
               }),
             }}
           />
