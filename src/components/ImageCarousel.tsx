@@ -51,20 +51,23 @@ export default function ImageCarousel() {
   return (
     <Box
       sx={{
-        backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
+        backgroundColor: 'rgba(0, 0, 0, 0.85)',
         backdropFilter: 'blur(8px)',
         borderRadius: '16px',
-        p: { xs: 3, md: 4 },
+        p: { xs: 2, md: 3 },
         width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
         maxWidth: '1800px',
         height: { xs: '400px', sm: '500px', md: '600px', lg: '700px' },
-        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
+        boxShadow: '0 8px 32px rgba(255, 105, 180, 0.3)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'relative',
         overflow: 'hidden',
-        mt: 4,
-        mb: { xs: 4, sm: 6 },
-        alignSelf: 'center', // ESSENCIAL se estiver dentro de um flexbox (como Container ou Box pai)
+        mb: 4,
+        alignSelf: 'center',
+        '&:hover': {
+          boxShadow: '0 8px 32px rgba(255, 105, 180, 0.5)',
+        },
+        transition: 'all 0.3s ease',
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -74,7 +77,7 @@ export default function ImageCarousel() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          transition: 'transform 0.7s ease-in-out',
+          transition: 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
           transform: `translateX(-${currentIndex * 100}%)`,
         }}
       >
@@ -89,7 +92,12 @@ export default function ImageCarousel() {
               height: '100%',
               flexShrink: 0,
               objectFit: 'cover',
-              borderRadius: '16px',
+              borderRadius: '8px',
+              filter: 'brightness(0.95)',
+              transition: 'filter 0.3s ease',
+              '&:hover': {
+                filter: 'brightness(1.05)',
+              },
             }}
           />
         ))}
@@ -102,13 +110,15 @@ export default function ImageCarousel() {
           left: '16px',
           top: '50%',
           transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0,0,0,0.5)',
+          background: 'linear-gradient(135deg, rgba(153, 89, 217, 0.8), rgba(255, 0, 102, 0.8))',
           color: 'white',
+          p: 2,
           '&:hover': {
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            background: 'linear-gradient(135deg, rgba(153, 89, 217, 1), rgba(255, 0, 102, 1))',
+            transform: 'translateY(-50%) scale(1.1)',
           },
           opacity: isHovered ? 1 : 0,
-          transition: 'opacity 0.3s ease',
+          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
         <ChevronLeftIcon fontSize="large" />
@@ -121,13 +131,15 @@ export default function ImageCarousel() {
           right: '16px',
           top: '50%',
           transform: 'translateY(-50%)',
-          backgroundColor: 'rgba(0,0,0,0.5)',
+          background: 'linear-gradient(135deg, rgba(255, 0, 102, 0.8), rgba(255, 153, 0, 0.8))',
           color: 'white',
+          p: 2,
           '&:hover': {
-            backgroundColor: 'rgba(0,0,0,0.8)',
+            background: 'linear-gradient(135deg, rgba(255, 0, 102, 1), rgba(255, 153, 0, 1))',
+            transform: 'translateY(-50%) scale(1.1)',
           },
           opacity: isHovered ? 1 : 0,
-          transition: 'opacity 0.3s ease',
+          transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
         <ChevronRightIcon fontSize="large" />
@@ -136,11 +148,15 @@ export default function ImageCarousel() {
       <Box
         sx={{
           position: 'absolute',
-          bottom: '16px',
+          bottom: '24px',
           left: '50%',
           transform: 'translateX(-50%)',
           display: 'flex',
-          gap: '8px'
+          gap: '12px',
+          p: 1,
+          borderRadius: '24px',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          backdropFilter: 'blur(4px)',
         }}
       >
         {images.map((_, index) => (
@@ -151,17 +167,22 @@ export default function ImageCarousel() {
               handleManualNavigation(() => {});
             }}
             sx={{
-              width: '10px',
+              width: index === currentIndex ? '24px' : '10px',
               height: '10px',
-              borderRadius: '50%',
-              paddingX: '4px', 
+              borderRadius: index === currentIndex ? '8px' : '50%',
               backgroundColor:
-                index === currentIndex ? 'primary.main' : 'rgba(255,255,255,0.5)',
+                index === currentIndex 
+                  ? 'linear-gradient(135deg, #9959D9, #FF0066)' 
+                  : 'rgba(255,255,255,0.5)',
               cursor: 'pointer',
-              transition: 'background-color 0.3s, transform 0.2s',
+              transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
               '&:hover': {
+                backgroundColor: index === currentIndex ? null : 'rgba(255,255,255,0.8)',
                 transform: 'scale(1.2)'
-              }
+              },
+              ...(index === currentIndex && {
+                background: 'linear-gradient(135deg, #9959D9, #FF0066)',
+              }),
             }}
           />
         ))}

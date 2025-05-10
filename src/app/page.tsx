@@ -40,8 +40,12 @@ export default function Home() {
           p: { xs: 3, md: 4 },
           width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
           maxWidth: '900px',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
-          border: '1px solid rgba(255, 255, 255, 0.1)'
+          boxShadow: '0 8px 32px rgba(255, 105, 180, 0.3)',
+          border: '1px solid rgba(255, 255, 255, 0.1)',
+          '&:hover': {
+            boxShadow: '0 8px 32px rgba(255, 105, 180, 0.5)',
+          },
+          transition: 'all 0.3s ease',
         }}>
           {/* Logo com tamanho ajustado */}
           <Box
