@@ -51,7 +51,7 @@ export default function ImageCarousel() {
   return (
     <Box
       sx={{
-        backgroundColor: 'rgba(0, 0, 0, 0.85)',
+        backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
         backdropFilter: 'blur(12px)',
         borderRadius: '8px',
         p: { xs: 2, md: 3 },
