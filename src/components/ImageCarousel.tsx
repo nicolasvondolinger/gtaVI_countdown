@@ -25,7 +25,7 @@ export default function ImageCarousel() {
   }, []);
 
   const goToPrev = useCallback(() => {
-    setCurrentIndex((prevIndex) => 
+    setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
   }, []);
@@ -49,27 +49,26 @@ export default function ImageCarousel() {
   };
 
   return (
-    <Box 
+    <Box
       sx={{
         backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
         backdropFilter: 'blur(8px)',
         borderRadius: '16px',
         p: { xs: 3, md: 4 },
         width: { xs: '90%', sm: '85%', md: '80%', lg: '70%' },
-        maxWidth: '900px',
+        maxWidth: '1800px',
         height: { xs: '400px', sm: '500px', md: '600px', lg: '700px' },
         boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
         border: '1px solid rgba(255, 255, 255, 0.1)',
         position: 'relative',
         overflow: 'hidden',
         mt: 4,
-        mx: 'auto',
-        marginBottom: { xs: 4, sm: 6 },
+        mb: { xs: 4, sm: 6 },
+        alignSelf: 'center', // ESSENCIAL se estiver dentro de um flexbox (como Container ou Box pai)
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Container das imagens com transição suave */}
       <Box
         sx={{
           width: '100%',
@@ -96,7 +95,6 @@ export default function ImageCarousel() {
         ))}
       </Box>
 
-      {/* Botões de navegação */}
       <IconButton
         onClick={() => handleManualNavigation(goToPrev)}
         sx={{
@@ -135,15 +133,16 @@ export default function ImageCarousel() {
         <ChevronRightIcon fontSize="large" />
       </IconButton>
 
-      {/* Indicadores */}
-      <Box sx={{
-        position: 'absolute',
-        bottom: '16px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        gap: '8px'
-      }}>
+      <Box
+        sx={{
+          position: 'absolute',
+          bottom: '16px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          display: 'flex',
+          gap: '8px'
+        }}
+      >
         {images.map((_, index) => (
           <Box
             key={index}
@@ -155,7 +154,9 @@ export default function ImageCarousel() {
               width: '10px',
               height: '10px',
               borderRadius: '50%',
-              backgroundColor: index === currentIndex ? 'primary.main' : 'rgba(255,255,255,0.5)',
+              paddingX: '4px', 
+              backgroundColor:
+                index === currentIndex ? 'primary.main' : 'rgba(255,255,255,0.5)',
               cursor: 'pointer',
               transition: 'background-color 0.3s, transform 0.2s',
               '&:hover': {
