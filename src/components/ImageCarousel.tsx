@@ -63,7 +63,8 @@ export default function ImageCarousel() {
         position: 'relative',
         overflow: 'hidden',
         mt: 4,
-        mx: 'auto'
+        mx: 'auto',
+        marginBottom: { xs: 4, sm: 6 },
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
