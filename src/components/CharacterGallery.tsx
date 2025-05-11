@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 const galleryItems = [
   {
-    image: '/gtavi_countdown/assets/gallery/1.jpg',
+    image: '/gtavi_countdown/assets/characters/jason.jpg',
     title: 'Jason wants an easy life',
     description: 'Jason grew up around gritters and crooks. After a stint in the Army trying to shake off his troubled teens, he found himself in the Keys doing what he knows best, working for local drug runners. It might be time to try something new.'
   },
   {
-    image: '/gtavi_countdown/assets/gallery/2.jpg',
+    image: '/gtavi_countdown/assets/characters/lucia.jpg',
     title: 'Lucia\'s father taught her to fight',
     description: 'Life has been coming at her swinging ever since. Fighting for her family landed her in the Leonida Penitentiary. Sheer luck got her out. Lucia\'s learned her lesson – only smart moves from here.'
   },
