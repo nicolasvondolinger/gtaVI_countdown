@@ -5,8 +5,7 @@ import { Box } from '@mui/material';
 
 const backgroundImages = [
   '/gtavi_countdown/assets/back1.png',
-  '/gtavi_countdown/assets/back2.png',
-  '/gtavi_countdown/assets/back3.png'
+  '/gtavi_countdown/assets/back2.png'
 ];
 
 export default function BackgroundSlideshow() {
@@ -52,7 +51,6 @@ export default function BackgroundSlideshow() {
             objectFit: 'cover',
             opacity: index === currentIndex ? (fade ? 1 : 0) : 0,
             transition: 'opacity 1s ease-in-out',
-            filter: 'brightness(0.6)',
           }}
         />
       ))}
