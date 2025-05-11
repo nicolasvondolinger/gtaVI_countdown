@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 
 const backgroundImages = [
-  '/gtavi_countdown/assets/back1.jpg',
-  '/gtavi_countdown/assets/back2.jpg',
-  '/gtavi_countdown/assets/back3.jpg'
+  '/gtavi_countdown/assets/back1.png',
+  '/gtavi_countdown/assets/back2.png',
+  '/gtavi_countdown/assets/back3.png'
 ];
 
 export default function BackgroundSlideshow() {
