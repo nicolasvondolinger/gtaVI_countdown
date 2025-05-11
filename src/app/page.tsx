@@ -10,6 +10,7 @@ import Footer from '@/components/Footer';
 import PurchaseButton from '@/components/PurchaseButton';
 import ImageCarousel from '@/components/ImageCarousel';
 import CharacterGallery from '@/components/CharacterGallery';
+import BackgroundSlideshow from '@/components/BackgroundSlideshow';
 
 export default function Home() {
   const [timezone, setTimezone] = useState('Europe/London');
@@ -19,11 +20,12 @@ export default function Home() {
       display: 'flex', 
       flexDirection: 'column', 
       minHeight: '100vh',
-      backgroundImage: 'url(/gtavi_countdown/assets/background.png)',
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
+      position: 'relative'
     }}>
+      {/* Background Slideshow */}
+      <BackgroundSlideshow />
+      
+      {/* Conteúdo */}
       <Header />
       <Container component="main" sx={{ 
         py: { xs: 4, sm: 5 }, 
@@ -31,10 +33,10 @@ export default function Home() {
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        position: 'relative', // Garante que fique acima do background
       }}>
         <Box sx={{
-          /* Aumenta opacidade em mobile (xs) para 0.85, mantém 0.7 em telas maiores */
           backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },
           backdropFilter: 'blur(8px)',
           borderRadius: '16px',
@@ -46,9 +48,8 @@ export default function Home() {
           '&:hover': {
             boxShadow: '0 8px 32px rgba(255, 105, 180, 0.5)',
           },
-        transition: 'all 0.3s ease',
+          transition: 'all 0.3s ease',
         }}>
-          {/* Logo com tamanho ajustado */}
           <Box
             component="img"
             src="/gtavi_countdown/assets/gta-logo.png"
@@ -69,7 +70,6 @@ export default function Home() {
           <Trailers />
           <PurchaseButton />
         </Box>
-        {/*<ImageCarousel />*/}
       </Container>
       <ImageCarousel />
       <CharacterGallery />
