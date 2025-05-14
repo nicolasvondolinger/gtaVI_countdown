@@ -1,7 +1,6 @@
 'use client'
 
 import { Box, Button, Typography } from '@mui/material';
-import ShareIcon from '@mui/icons-material/Share';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import RedditIcon from '@mui/icons-material/Reddit';
 import XIcon from '@mui/icons-material/X';
