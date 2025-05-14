@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { Container, Box } from '@mui/material';
-import Header from '@/components/Header';
 import Countdown from '@/components/Countdown';
 import TimezoneSelector from '@/components/TimezoneSelector';
 import Trailers from '@/components/Trailers';
@@ -27,7 +26,6 @@ export default function Home() {
       <BackgroundSlideshow />
       
       {/* Conteúdo */}
-      <Header />
       <Container component="main" sx={{ 
         py: { xs: 4, sm: 5 }, 
         textAlign: 'center', 
@@ -35,7 +33,7 @@ export default function Home() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        position: 'relative', // Garante que fique acima do background
+        position: 'relative',
       }}>
         <Box sx={{
           backgroundColor: { xs: 'rgba(0, 0, 0, 0.85)', md: 'rgba(0, 0, 0, 0.6)' },

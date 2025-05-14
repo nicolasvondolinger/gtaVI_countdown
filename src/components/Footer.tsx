@@ -114,7 +114,7 @@ export default function Footer() {
       {/* Copyright Text */}
       <Box>
         <Typography variant="caption" color="text.secondary">
-          © {new Date().getFullYear()} GTA VI Countdown© · Fan-made project by Lucas Cassio Costa & Nicolas Von Dolinger
+          © {new Date().getFullYear()} GTA VI Countdown · Fan-made project by Lucas Cassio Costa & Nicolas Von Dolinger
           <br /> All rights reserved to{' '}
           <Typography 
             component="a" 

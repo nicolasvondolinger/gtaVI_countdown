@@ -1,9 +1,12 @@
-'use client'
+'use client';
 
 import { Button } from '@mui/material';
 import Link from 'next/link';
+import { useLanguage } from '@/hooks/useLanguage';
 
 export default function PurchaseButton() {
+  const { translations } = useLanguage();
+
   return (
     <Button
       component={Link}
@@ -31,7 +34,7 @@ export default function PurchaseButton() {
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
       }}
     >
-      ADQUIRA JÁ
+      {translations.purchase || "BUY NOW"}
     </Button>
   );
 }
