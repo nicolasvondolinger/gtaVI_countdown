@@ -69,6 +69,10 @@ const galleryItemsTranslations = {
     {
       title: 'O pai de Lucia a ensinou a lutar',
       description: 'A vida sempre foi dura com ela. Lutar por sua família a levou à Penitenciária Leonida. Sorte a tirou de lá. Lucia aprendeu a lição - daqui para frente, apenas jogadas inteligentes.'
+    },
+    {
+      title: 'E se tudo na internet fosse verdade?',
+      description: 'Amigo de Jason e associado de Brian, Cal se sente mais seguro em casa, bisbilhotando as comunicações da Guarda Costeira com algumas cervejas e algumas abas privadas abertas.'
     }
   ],
   en: [
@@ -79,6 +83,10 @@ const galleryItemsTranslations = {
     {
       title: 'Lucia\'s father taught her to fight',
       description: 'Life has been coming at her swinging ever since. Fighting for her family landed her in the Leonida Penitentiary. Sheer luck got her out. Lucia\'s learned her lesson – only smart moves from here.'
+    },
+    {
+      title: 'What if everything on the internet was true?',
+      description: 'Jason\'s friend and a fellow associate of Brian\'s, Cal feels safest hanging at home, snooping on Coast Guard comms with a few beers and some private browser tabs open.'
     }
   ],
   es: [
@@ -89,6 +97,10 @@ const galleryItemsTranslations = {
     {
       title: 'El padre de Lucia le enseñó a luchar',
       description: 'La vida siempre ha sido dura con ella. Luchar por su familia la llevó a la Penitenciaría Leonida. La pura suerte la sacó de allí. Lucia ha aprendido la lección: de ahora en adelante, solo jugadas inteligentes.'
+    },
+    {
+      title: '¿Y si todo en internet fuera verdad?',
+      description: 'Amigo de Jason y asociado de Brian, Cal se siente más seguro en casa, espiando las comunicaciones de la Guardia Costera con algunas cervezas y pestañas privadas abiertas.'
     }
   ]
 };
