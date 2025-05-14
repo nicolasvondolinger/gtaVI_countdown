@@ -11,6 +11,7 @@ import PurchaseButton from '@/components/PurchaseButton';
 import ImageCarousel from '@/components/ImageCarousel';
 import CharacterGallery from '@/components/CharacterGallery';
 import BackgroundSlideshow from '@/components/BackgroundSlideshow';
+import CalendarButton from '@/components/CalendarButton';
 
 export default function Home() {
   const [timezone, setTimezone] = useState('Europe/London');
@@ -69,6 +70,7 @@ export default function Home() {
           />
           <Trailers />
           <PurchaseButton />
+          <CalendarButton />
         </Box>
       </Container>
       <ImageCarousel />
