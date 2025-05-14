@@ -21,7 +21,7 @@ export default function BackgroundSlideshow() {
           (prevIndex + 1) % backgroundImages.length
         );
         setFade(true);
-      }, 700); // Tempo do fade out
+      }, 1000); // Tempo do fade out
     }, 5000); // Troca a cada 5 segundos
 
     return () => clearInterval(interval);
