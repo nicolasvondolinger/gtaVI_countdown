@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { 
   Menu, 
   MenuItem, 
-  IconButton,
+  Button,
   Tooltip,
   ListItemIcon,
   ListItemText,
@@ -66,19 +66,30 @@ export default function CalendarButton() {
   return (
     <>
       <Tooltip title="Add to Calendar">
-        <IconButton
+        <Button // Alterado para Button
           onClick={handleClick}
+          startIcon={<EventIcon />} // Adicionado ícone como startIcon
           sx={{
+            minWidth: 120, // Largura mínima
+            padding: '8px 16px', // Padding maior
+            borderRadius: '12px', // Bordas mais arredondadas
             background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
             color: 'white',
+            textTransform: 'none', // Evita que o texto fique em maiúsculas
             '&:hover': {
               opacity: 0.9,
               background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
-            }
+              transform: 'scale(1.02)',
+            },
+            '&:active': {
+              transform: 'scale(0.98)',
+            },
+            transition: 'all 0.2s ease-in-out',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
           }}
         >
-          <EventIcon />
-        </IconButton>
+          Add to Calendar
+        </Button>
       </Tooltip>
       
       <Menu

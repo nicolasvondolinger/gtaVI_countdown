@@ -77,8 +77,13 @@ export default function Footer() {
           borderRadius: 2,
           border: '1px solid',
           borderColor: 'grey.700',
-          backgroundColor: 'grey.800',
-          boxShadow: 1
+          backgroundColor: 'rgba(38, 38, 38, 0.7)', // Cor de fundo com transparência
+          backdropFilter: 'blur(10px)', // Efeito de desfoque
+          boxShadow: 1,
+          // Fallback para navegadores que não suportam backdrop-filter
+          '@supports not (backdrop-filter: blur(10px))': {
+            backgroundColor: 'rgba(38, 38, 38, 0.9)'
+          }
         }}>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
             <IconButton
