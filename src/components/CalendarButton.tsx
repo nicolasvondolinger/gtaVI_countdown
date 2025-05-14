@@ -66,16 +66,18 @@ export default function CalendarButton() {
   return (
     <>
       <Tooltip title="Add to Calendar">
-        <Button // Alterado para Button
+        <Button
           onClick={handleClick}
-          startIcon={<EventIcon />} // Adicionado ícone como startIcon
+          startIcon={<EventIcon />}
           sx={{
-            minWidth: 120, // Largura mínima
-            padding: '8px 16px', // Padding maior
-            borderRadius: '12px', // Bordas mais arredondadas
+            mt: 4,
+            mb: 4,
+            py: 2,
+            px: 4,
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
             background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
             color: 'white',
-            textTransform: 'none', // Evita que o texto fique em maiúsculas
             '&:hover': {
               opacity: 0.9,
               background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
@@ -86,6 +88,8 @@ export default function CalendarButton() {
             },
             transition: 'all 0.2s ease-in-out',
             boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+            borderRadius: '12px',
+            textTransform: 'none',
           }}
         >
           Add to Calendar

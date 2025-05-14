@@ -66,14 +66,13 @@ export default function Home() {
             selectedTimezone={timezone}
             onTimezoneChange={setTimezone}
           />
-          <Trailers />
-          <Box sx={{ 
-            display: 'flex', 
-            justifyContent: 'center', 
-            gap: 4, // Aumentei o espaçamento entre os botões
-            mt: 4,
-            mb: 4,
-            flexWrap: 'wrap' // Para responsividade em telas pequenas
+          <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: 3, // Espaçamento consistente
+            flexWrap: 'wrap', // Para telas pequenas
+            alignItems: 'center',
+            my: 4
           }}>
             <PurchaseButton />
             <CalendarButton />

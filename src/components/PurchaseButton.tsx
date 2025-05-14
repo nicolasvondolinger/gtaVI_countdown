@@ -21,10 +21,11 @@ export default function PurchaseButton() {
         px: 4,
         fontSize: '1.1rem',
         fontWeight: 'bold',
-        backgroundColor: '#4CAF50',
+        background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)', // Gradiente igual ao do calendário
         color: 'white',
         '&:hover': {
-          backgroundColor: '#388E3C',
+          opacity: 0.9,
+          background: 'linear-gradient(to bottom, #335FCF, #A941C1, #FF5E94, #FF9547)',
           transform: 'scale(1.02)',
         },
         '&:active': {
@@ -32,6 +33,8 @@ export default function PurchaseButton() {
         },
         transition: 'all 0.2s ease-in-out',
         boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+        borderRadius: '12px', // Bordas arredondadas
+        textTransform: 'none', // Texto sem transformação para maiúsculas
       }}
     >
       {translations.purchase || "BUY NOW"}
