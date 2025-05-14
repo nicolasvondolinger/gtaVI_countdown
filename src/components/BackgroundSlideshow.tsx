@@ -5,7 +5,8 @@ import { Box } from '@mui/material';
 
 const backgroundImages = [
   '/gtavi_countdown/assets/back1.png',
-  '/gtavi_countdown/assets/back2.png'
+  '/gtavi_countdown/assets/back2.png',
+  '/gtavi_countdown/assets/back3.png'
 ];
 
 export default function BackgroundSlideshow() {
@@ -20,7 +21,7 @@ export default function BackgroundSlideshow() {
           (prevIndex + 1) % backgroundImages.length
         );
         setFade(true);
-      }, 1000); // Tempo do fade out
+      }, 700); // Tempo do fade out
     }, 5000); // Troca a cada 5 segundos
 
     return () => clearInterval(interval);
