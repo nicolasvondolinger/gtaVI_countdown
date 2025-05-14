@@ -66,6 +66,7 @@ export default function Home() {
             selectedTimezone={timezone}
             onTimezoneChange={setTimezone}
           />
+          <Trailers />
           <Box sx={{
             display: 'flex',
             justifyContent: 'center',
