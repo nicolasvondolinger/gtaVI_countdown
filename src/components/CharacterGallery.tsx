@@ -96,7 +96,11 @@ function getCharacterImage(index: number) {
   const images = [
     '/gtavi_countdown/assets/characters/jason.jpg',
     '/gtavi_countdown/assets/characters/lucia.jpg',
-    '/gtavi_countdown/assets/characters/cal_hampton.jpg'
+    '/gtavi_countdown/assets/characters/cal_hampton.jpg',
+    '/gtavi_countdown/assets/characters/boobie_ike.jpg',
+    '/gtavi_countdown/assets/characters/drequan_priest.jpg',
+    '/gtavi_countdown/assets/characters/real_dimez.jpg',
+    '/gtavi_countdown/assets/characters/raul_bautista.jpg'
   ];
   return images[index];
 }
