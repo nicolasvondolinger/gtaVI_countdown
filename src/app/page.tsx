@@ -12,6 +12,7 @@ import CharacterGallery from '@/components/CharacterGallery';
 import BackgroundSlideshow from '@/components/BackgroundSlideshow';
 import CalendarButton from '@/components/CalendarButton';
 import ShareBox from '@/components/ShareBox';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 export default function Home() {
   const [timezone, setTimezone] = useState('Europe/London');
@@ -25,6 +26,7 @@ export default function Home() {
     }}>
       {/* Background Slideshow */}
       <BackgroundSlideshow />
+      <AnimatedBackground />
       
       {/* Conteúdo */}
       <Container component="main" sx={{ 
