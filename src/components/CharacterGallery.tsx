@@ -100,7 +100,8 @@ function getCharacterImage(index: number) {
     '/gtavi_countdown/assets/characters/boobie_ike.jpg',
     '/gtavi_countdown/assets/characters/drequan_priest.jpg',
     '/gtavi_countdown/assets/characters/real_dimez.jpg',
-    '/gtavi_countdown/assets/characters/raul_bautista.jpg'
+    '/gtavi_countdown/assets/characters/raul_bautista.jpg',
+    '/gtavi_countdown/assets/characters/brian_heder.jpg'
   ];
   return images[index];
 }
