@@ -1,7 +1,7 @@
 'use client';
 
 import { Box } from '@mui/material';
-import './animatedBackground.css';
+import '@/styles/animatedBackground.css';
 
 export default function AnimatedBackground() {
   return (
