@@ -131,7 +131,7 @@ export default function Footer() {
               '&:hover': { textDecoration: 'underline' }
             }}
           >
-            Rockstar Games and Take-Two Interactive
+            Rockstar Games
           </Typography>
           . This site is not affiliated with or endorsed by Rockstar Games. 
         </Typography>

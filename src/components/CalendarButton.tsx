@@ -92,7 +92,6 @@ export default function CalendarButton() {
             textTransform: 'none',
           }}
         >
-          Add to Calendar
         </Button>
       </Tooltip>
       
